@@ -29,10 +29,10 @@ dags:
     enabled: false
   gitSync:
     enabled: true
-    repo: https://github.com/YOUR_USERNAME/YOUR_REPO.git
+    repo: https://github.com/alero-awani/rackspace-airflow.git
     branch: main
     # If your DAGs are in a subdirectory, specify it here
-    subPath: ""
+    subPath: "dags"
     # Sync interval in seconds (how often to pull from git)
     wait: 60
     # Maximum number of consecutive failures before giving up
