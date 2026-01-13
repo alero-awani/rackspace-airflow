@@ -20,16 +20,12 @@ default_args = {
 # Node selector for Rackspace Spot instances
 # Adjust these labels based on how your spot nodes are labeled
 spot_node_selector = {
-    "node.kubernetes.io/instance-type": "spot",
-    # or 'rackspace.com/node-type': 'spot',
+    "servers.ngpc.rxt.io/type": "spot",
 }
 
 # Tolerations for spot instances (if using taints)
-spot_tolerations = [
-    k8s.V1Toleration(
-        key="rackspace.com/spot", operator="Equal", value="true", effect="NoSchedule"
-    )
-]
+# Not needed since nodes have no taints
+spot_tolerations = []
 
 # Resource requests for training pods
 training_resources = k8s.V1ResourceRequirements(
